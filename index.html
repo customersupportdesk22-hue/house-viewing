@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a House Viewing | HomeView Pro Kenya</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+  body { color: #2c3e50; line-height: 1.6; background: #f4f6f9; }
+
+  /* NAV */
+  nav {
+    background: #fff; padding: 18px 8%; display: flex;
+    justify-content: space-between; align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100;
+  }
+  .logo { font-size: 1.5rem; font-weight: 700; color: #1a73e8; }
+  .logo span { color: #f39c12; }
+  nav ul { list-style: none; display: flex; gap: 30px; }
+  nav a { text-decoration: none; color: #2c3e50; font-weight: 500; }
+  nav a:hover { color: #1a73e8; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600') center/cover;
+    color: #fff; padding: 100px 8%; text-align: center;
+  }
+  .hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
+  .hero p { font-size: 1.15rem; max-width: 650px; margin: 0 auto 30px; }
+  .btn {
+    display: inline-block; background: #f39c12; color: #fff;
+    padding: 15px 40px; border-radius: 50px; text-decoration: none;
+    font-weight: 600; font-size: 1.1rem; transition: 0.3s;
+    border: none; cursor: pointer;
+  }
+  .btn:hover { background: #e67e22; transform: translateY(-2px); }
+
+  /* BOOKING SECTION */
+  .booking-section { padding: 70px 8%; }
+  .booking-form {
+    max-width: 650px; margin: 0 auto; background: #fff;
+    padding: 45px 40px; border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  }
+  .booking-form h2 {
+    text-align: center; font-size: 2rem; margin-bottom: 10px;
+  }
+  .booking-form .sub {
+    text-align: center; color: #666; margin-bottom: 35px;
+  }
+  .form-group { margin-bottom: 22px; }
+  label { display: block; margin-bottom: 8px; font-weight: 600; }
+  input, select, textarea {
+    width: 100%; padding: 13px 15px; border: 1px solid #ddd;
+    border-radius: 8px; font-size: 1rem; font-family: inherit;
+    background: #fafbfc;
+  }
+  input:focus, select:focus, textarea:focus {
+    outline: none; border-color: #1a73e8; background: #fff;
+  }
+  .btn-submit {
+    width: 100%; background: #1a73e8; color: #fff;
+    padding: 16px; border: none; border-radius: 8px;
+    font-size: 1.15rem; font-weight: 600; cursor: pointer;
+    transition: 0.3s;
+  }
+  .btn-submit:hover { background: #0d5bcc; }
+
+  /* PAYMENT BOX */
+  .payment-box {
+    margin-top: 30px; background: #e8f5e9;
+    border: 2px solid #27ae60; border-radius: 12px;
+    padding: 25px; text-align: center;
+  }
+  .payment-box h3 {
+    color: #2e7d32; margin-bottom: 15px; font-size: 1.2rem;
+  }
+  .payment-box .pay-line {
+    font-size: 1.05rem; margin: 8px 0; color: #333;
+  }
+  .payment-box .pay-line strong {
+    color: #1a73e8; font-size: 1.15rem;
+  }
+  .payment-box .amount {
+    font-size: 1.8rem; font-weight: 700; color: #27ae60;
+    margin: 10px 0;
+  }
+  .payment-box .note {
+    font-size: 0.9rem; color: #555; margin-top: 12px;
+  }
+
+  /* INFO STRIP */
+  .info-strip {
+    background: #1a73e8; color: #fff; padding: 40px 8%;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px; text-align: center;
+  }
+  .info-strip h4 { font-size: 1.1rem; margin-bottom: 5px; }
+
+  /* FOOTER */
+  footer { background: #2c3e50; color: #fff; text-align: center; padding: 25px; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.9rem; }
+    nav ul { display: none; }
+    .booking-form { padding: 30px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">HomeView<span>Pro</span> 🇰🇪</div>
+  <ul>
+    <li><a href="#book">Book Viewing</a></li>
+    <li><a href="#payment">Payment</a></li>
+    <li><a href="#info">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <h1>Book Your House Viewing</h1>
+  <p>Choose your preferred day and time. View 5 houses in one session for just KSh 1,500.</p>
+  <a href="#book" class="btn">Book Now</a>
+</header>
+
+<!-- BOOKING FORM -->
+<section class="booking-section" id="book">
+  <form class="booking-form" onsubmit="alert('Thank you! We will contact you shortly to confirm your viewing appointment.'); return false;">
+    <h2>Book Your Appointment</h2>
+    <p class="sub">Fill in your details below</p>
+
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" required placeholder="e.g. John Kamau">
+    </div>
+
+    <div class="form-group">
+      <label>Phone Number (WhatsApp)</label>
+      <input type="tel" required placeholder="+254 7XX XXX XXX">
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" required placeholder="you@email.com">
+    </div>
+
+    <div class="form-group">
+      <label>Preferred Day</label>
+      <input type="date" required>
+    </div>
+
+    <div class="form-group">
+      <label>Preferred Time</label>
+      <select required>
+        <option value="">Select time</option>
+        <option>8:00 AM</option>
+        <option>9:00 AM</option>
+        <option>10:00 AM</option>
+        <option>11:00 AM</option>
+        <option>12:00 PM</option>
+        <option>1:00 PM</option>
+        <option>2:00 PM</option>
+        <option>3:00 PM</option>
+        <option>4:00 PM</option>
+        <option>5:00 PM</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Location / Area</label>
+      <input type="text" required placeholder="e.g. Westlands, Kilimani, Ruaka...">
+    </div>
+
+    <div class="form-group">
+      <label>Additional Notes (optional)</label>
+      <textarea rows="3" placeholder="Anything else we should know?"></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit">Confirm Booking</button>
+
+    <!-- PAYMENT DETAILS BOX -->
+    <div class="payment-box" id="payment">
+      <h3>💚 Payment Details</h3>
+      <p class="amount">KSh 1,500</p>
+      <p class="pay-line">House Tour Agent: <strong>Noah Kipkwayi</strong></p>
+      <p class="pay-line">M-Pesa Number: <strong>0143732903</strong></p>
+      <p class="note">📌 After paying, send the M-Pesa confirmation message to our WhatsApp to confirm your booking.</p>
+    </div>
+  </form>
+</section>
+
+<!-- INFO STRIP -->
+<section class="info-strip" id="info">
+  <div>
+    <h4>📞 Call / SMS</h4>
+    <p>0143732903</p>
+  </div>
+  <div>
+    <h4>💬 WhatsApp</h4>
+    <p>0143732903</p>
+  </div>
+  <div>
+    <h4>👤 Agent</h4>
+    <p>Noah Kipkwayi</p>
+  </div>
+  <div>
+    <h4>🕐 Hours</h4>
+    <p>Mon - Sat: 8AM - 6PM</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 HomeViewPro Kenya. All rights reserved. | Agent: Noah Kipkwayi</p>
+</footer>
+
+</body>
+  </html>
